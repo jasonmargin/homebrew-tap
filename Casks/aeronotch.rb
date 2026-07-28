@@ -11,15 +11,21 @@ cask "aeronotch" do
 
   app "AeroNotch.app"
 
+  # Ad-hoc signed (no Developer ID → cannot notarize); strip Gatekeeper
+  # quarantine so first launch isn't blocked.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/AeroNotch.app"]
+  end
+
   uninstall quit: "com.jason.aeronotch"
 
   zap trash: "~/.config/aeronotch"
 
   caveats <<~EOS
-    aeronotch is not notarized (built with an ad-hoc signature), so
-    Gatekeeper will block the first launch. Clear the quarantine flag:
+    aeronotch is not notarized (ad-hoc signature); the install strips the
+    Gatekeeper quarantine flag automatically. If macOS still blocks it, run:
       xattr -dr com.apple.quarantine /Applications/AeroNotch.app
-    or approve it under System Settings → Privacy & Security → "Open Anyway".
 
     For instant workspace-switch detection, add this to
     ~/.config/aerospace/aerospace.toml and run `aerospace reload-config`:
