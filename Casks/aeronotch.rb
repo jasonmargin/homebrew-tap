@@ -7,7 +7,7 @@ cask "aeronotch" do
   desc "AeroSpace workspaces in your MacBook notch"
   homepage "https://github.com/jasonmargin/aeronotch"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "AeroNotch.app"
 
@@ -16,9 +16,10 @@ cask "aeronotch" do
   zap trash: "~/.config/aeronotch"
 
   caveats <<~EOS
-    aeronotch is not notarized (built with an ad-hoc signature). Install with:
-      brew install --cask --no-quarantine aeronotch
-    or right-click → Open on first launch to clear Gatekeeper.
+    aeronotch is not notarized (built with an ad-hoc signature), so
+    Gatekeeper will block the first launch. Clear the quarantine flag:
+      xattr -dr com.apple.quarantine /Applications/AeroNotch.app
+    or approve it under System Settings → Privacy & Security → "Open Anyway".
 
     For instant workspace-switch detection, add this to
     ~/.config/aerospace/aerospace.toml and run `aerospace reload-config`:
