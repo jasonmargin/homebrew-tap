@@ -1,6 +1,6 @@
 cask "aeronotch" do
-  version "0.1.0"
-  sha256 "e5044b0c6cb70749570b66bfc69c498838a9fb7ced6a40d1b36b2dbcb54e52d2"
+  version "0.2.0"
+  sha256 "2d8a42a44b9412477c4dd905f7ac5546f25c1fcb47e1afae538d991a22e93b8d"
 
   url "https://github.com/jasonmargin/aeronotch/releases/download/v#{version}/AeroNotch-#{version}.zip"
   name "AeroNotch"
