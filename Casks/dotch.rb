@@ -2,10 +2,10 @@ cask "dotch" do
   version "0.3.0"
   sha256 "d90c3deee940ab1a9c51837ad4e06904ec60463d328e666de58b58c561e7dc70"
 
-  url "https://github.com/jasonmargin/dotch/releases/download/v#{version}/Dotch-#{version}.zip"
+  url "https://github.com/jasonmargin/dotch-releases/releases/download/v#{version}/Dotch-#{version}.zip"
   name "Dotch"
   desc "AeroSpace workspaces in your MacBook notch"
-  homepage "https://github.com/jasonmargin/dotch"
+  homepage "https://github.com/jasonmargin/dotch-releases"
 
   depends_on macos: :sonoma
 
