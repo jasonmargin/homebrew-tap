@@ -1,6 +1,6 @@
 cask "dotch" do
-  version "0.4.1"
-  sha256 "019561894456fae9d718816221a5da9d96928c5b8bd3ecee0f4b206f61fb0499"
+  version "0.5.0"
+  sha256 "f7d1ba9d7ffbeea6abe42998eeda3fafe8554555caaa78af939880d34aa0498d"
 
   url "https://github.com/jasonmargin/dotch-releases/releases/download/v#{version}/Dotch-#{version}.zip"
   name "Dotch"
